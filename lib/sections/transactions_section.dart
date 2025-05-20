@@ -14,14 +14,28 @@ class TransactionsSection extends StatelessWidget{
             child: Text('Recent Transactions', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold
             ),),
           ),
-    
-        SliverList(delegate: SliverChildBuilderDelegate((context, index) {
-          int transactionNumber = index + 1;  
+        
+        ListView.builder(
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            itemCount: 5,
+            itemBuilder: (context, index) {
+              int transactionNumber = index + 1;
 
-          return _buildTransactionTile(title: 'Transaction $transactionNumber', subtitle: 'Details of transacton $transactionNumber', 
-            amount: '${transactionNumber.isEven ? '+' : '-'}\$${transactionNumber * 20}', isPositive: index.isEven);
-            }, childCount: 20
-          ),
+              return _buildTransactionTile(
+                title: 'Transaction $transactionNumber',
+                subtitle: 'Details of transaction $transactionNumber',
+                amount: '${transactionNumber.isEven ? '+' : '-'}\$${transactionNumber * 5}',
+                isPositive: index.isEven,
+          );
+        },
+        // SliverList(delegate: SliverChildBuilderDelegate((context, index) {
+        //   int transactionNumber = index + 1;  
+
+        //   return _buildTransactionTile(title: 'Transaction $transactionNumber', subtitle: 'Details of transacton $transactionNumber', 
+        //     amount: '${transactionNumber.isEven ? '+' : '-'}\$${transactionNumber * 20}', isPositive: index.isEven);
+        //     }, childCount: 20
+        //   ),
         ),
       ])
     );
