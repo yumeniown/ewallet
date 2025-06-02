@@ -18,7 +18,7 @@ class TransactionsSection extends StatelessWidget{
         ListView.builder(
             shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),
-            itemCount: 5,
+            itemCount: 7,
             itemBuilder: (context, index) {
               int transactionNumber = index + 1;
 
