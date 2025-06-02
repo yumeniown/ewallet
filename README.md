@@ -1,6 +1,6 @@
 # ewallet
 
- Simple E-Wallet Mobile App Template UI 
+ Simple E-Wallet Mobile App Template UI with slivers
  
 ## Getting Started
 
